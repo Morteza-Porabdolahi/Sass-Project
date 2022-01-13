@@ -1,0 +1,287 @@
+.nav-bar {
+    &-navigation {
+        position: relative;
+        z-index: 500;
+        display: flex;
+
+        &-left {
+            width: 50vw;
+            height: 100vh;
+            background: $color-dark;
+            position: fixed;
+            left: -50vw;
+            transition: left 0.3s cubic-bezier(1, 0, 0, 1);
+            @media (max-width : 800px){
+                display: none;
+            }
+            .left-img {
+                width: 50%;
+                position: absolute;
+                box-shadow: 0 15px 60px rgba($color-black, 0.4);
+                opacity: 0.85;
+                border-radius: 10px;
+                @media (max-width : 1300px){
+                    width: 55%;
+                }
+                @media (max-width : 1000px){
+                    width: 65%;
+                }
+            }
+
+            .left-img-1 {
+                top: 15%;
+                left: 15%;
+                @media (max-width : 1000px){
+                    left: 5%;
+                }
+            }
+
+            .left-img-2 {
+                top: 35%;
+                left: 25%;
+                @media (max-width : 1000px){
+                    left: 15%;
+                }
+            }
+
+            .left-img-3 {
+                top: 55%;
+                left: 35%;
+                @media (max-width : 1000px){
+                    left: 20%;
+                }
+            }
+        }
+
+        &-right {
+            width: 50vw;
+            right: -50vw;
+            height: 100vh;
+            background: #1f1b1d;
+            position: fixed;
+            transition: right 0.3s cubic-bezier(1, 0, 0, 1);
+            @include FlexDisplay();
+            @media (max-width : 800px){
+                width: 100vw;
+                right: -100vw;
+            }
+            .nav-list {
+                list-style: none;
+
+                &-link {
+                    font-family: $font-Sahel;
+                    font-size: 35px;
+                    @include textStyles();
+                    text-decoration: none;
+                    color: $color-secondary;
+                    display: block;
+                    margin: 25px 0;
+                    text-align: center;
+                    transition: all 0.3s;
+                    @media (max-width : 600px){
+                        font-size: 20px;
+                    }
+                    &:hover {
+                        color: $color-primary;
+                        letter-spacing: 4px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.checkbox:checked ~ .nav-bar-navigation .nav-bar-navigation-left {
+    left: 0;
+}
+
+.checkbox:checked ~ .nav-bar-navigation .nav-bar-navigation-right {
+    right: 0;
+}
+
+.checkbox:checked ~ .burger-menu .menu {
+    transform: rotateZ(90deg);
+    &-line-2 {
+        opacity: 0;
+    }
+
+    &-line-1 {
+        transform: rotate(45deg);
+    }
+
+    &-line-3 {
+        transform: rotate(-45deg);
+    }
+}
+
+.header {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background: linear-gradient(rgba($color-black, 0.85), rgba($color-black, 0.8)),
+        url(../images/header.jpg) center no-repeat;
+    background-size: cover;
+
+    .brand {
+        @include Centering(15%);
+        display: flex;
+        align-items: center;
+    }
+
+    &-banner {
+        text-align: center;
+        @include Centering(50%);
+    }
+}
+
+.about-us {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    @media (max-width: 800px) {
+        height: 75vh;
+    }
+    @media (max-width: 500px) {
+        height: 60vh;
+    }
+    &-left {
+        width: 40%;
+
+        img {
+            width: 100%;
+            opacity: 0.7;
+            margin-left: 20px;
+            border-radius: 10px;
+            margin-top: 100px;
+        }
+        @media (max-width: 800px) {
+            display: none;
+        }
+    }
+
+    &-right {
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 50px;
+        @media (max-width: 800px) {
+            width: 100%;
+        }
+        @media (max-width: 1300px) {
+            padding: 0 25px;
+        }
+        .main-heading {
+            font-size: 60px;
+            @media (max-width: 500px) {
+                font-size: 30px;
+            }
+        }
+
+        .sub-heading {
+            font-size: 40px;
+            margin-bottom: 20px;
+            @media (max-width: 500px) {
+                font-size: 10px;
+                margin-bottom: 0px;
+            }
+        }
+
+        .stars {
+            margin: 30px 0;
+            @media (max-width: 800px) {
+                margin: 15px 0;
+            }
+            @media (max-width: 500px) {
+                margin: 12px 0;
+            }
+            .star {
+                font-size: 18px;
+                color: $color-primary;
+                margin-left: 10px;
+                @media (max-width: 1000px) {
+                    font-size: 14px;
+                }
+            }
+        }
+
+        .description {
+            font-family: $font-Nastaliq;
+            font-size: 25px;
+            color: $color-secondary;
+            direction: rtl;
+            text-align: center;
+            @media (max-width: 1600px) {
+                font-size: 20px;
+            }
+            @media (max-width: 1000px) {
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+.gallery {
+    margin-top: 100px;
+
+    .cards-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+.footer {
+    padding: 70px 0;
+    @include FlexDisplay();
+    flex-direction: column;
+    @media (max-width: 500px) {
+        padding: 40px 0;
+    }
+    &-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 70px;
+    }
+
+    .social-media {
+        display: flex;
+        width: 300px;
+        justify-content: space-between;
+        list-style: none;
+        margin-bottom: 70px;
+        @media (max-width: 500px) {
+            width: 200px;
+        }
+        &-link {
+            text-decoration: none;
+            font-size: 50px;
+            color: $color-secondary;
+            transition: all 0.3s;
+            @media (max-width: 1000px) {
+                font-size: 30px;
+            }
+            @media (max-width: 500px) {
+                font-size: 20px;
+            }
+            &:hover {
+                color: $color-primary;
+            }
+        }
+    }
+
+    &-copyright-paragraph {
+        font-family: $font-Sahel;
+        font-size: 20px;
+        color: $color-secondary;
+        direction: rtl;
+        @media (max-width: 800px) {
+            margin: auto;
+            text-align: center;
+            font-size: 14px;
+        }
+        @media (max-width: 500px) {
+            font-size: 15px;
+            max-width: 350px;
+        }
+    }
+}

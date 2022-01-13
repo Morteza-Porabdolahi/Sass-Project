@@ -1,0 +1,42 @@
+@font-face {
+    font-family: "Nastaliq";
+    src: url("../fonts/IranNastaliq.ttf");
+}
+@font-face {
+    font-family: "Sahel";
+    src: url("../fonts/Sahel-Regular.ttf");
+}
+$color-dark : #262626;
+$color-black : #000000;
+$color-primary : #D3AB55;
+$color-secondary : #bbb;
+$color-white : #fff;
+$font-Nastaliq : 'Nastaliq',Tahoma;
+$font-Sahel : 'Sahel',Tahoma;
+@mixin FlexDisplay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin textStyles {
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+@mixin Centering($top-value) {
+    position: absolute;
+    top: $top-value;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+%full-space{
+    width: 100%;
+    height: 100%;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: $color-dark;
+}
