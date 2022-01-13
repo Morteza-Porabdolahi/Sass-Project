@@ -180,6 +180,7 @@
         &-heading {
             font-family: $font-Nastaliq;
             font-size: 50px;
+            text-align: center;
             @include textStyles();
             @media (max-width: 900px) {
                 font-size: 35px;
@@ -196,6 +197,7 @@
             font-family: $font-Sahel;
             font-size: 30px;
             margin-bottom: 30px;
+            text-align: center;
             @include textStyles();
             @media (max-width: 900px) {
                 font-size: 20px;
@@ -220,6 +222,7 @@
             cursor: pointer;
             padding: 10px 30px;
             transition: all 0.3s;
+            text-align: center;
             @media (max-width: 900px) {
                 font-size: 12px;
                 padding: 5px 20px;
