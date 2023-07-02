@@ -14,7 +14,11 @@
             @media (max-width : 800px){
                 display: none;
             }
+            .left-img[data-aos]{
+                transition-duration: 1s;
+            }
             .left-img {
+                transform: perspective(2500px) rotateY(-100deg)!important;
                 width: 50%;
                 position: absolute;
                 box-shadow: 0 15px 60px rgba($color-black, 0.4);
@@ -93,6 +97,10 @@
 
 .checkbox:checked ~ .nav-bar-navigation .nav-bar-navigation-left {
     left: 0;
+}
+
+.checkbox:checked ~ .nav-bar-navigation .nav-bar-navigation-left .left-img {
+    transform: perspective(2500px) rotateY(0)!important;
 }
 
 .checkbox:checked ~ .nav-bar-navigation .nav-bar-navigation-right {

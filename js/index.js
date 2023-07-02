@@ -1,5 +1,9 @@
 const _ = document;
 
+(function () {
+	AOS.init();
+})();
+
 const subHeading = _.querySelector(".sub-heading");
 const heading = _.querySelector(".main-heading");
 

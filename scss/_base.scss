@@ -39,4 +39,6 @@ $font-Sahel : 'Sahel',Tahoma;
 }
 body{
     background: $color-dark;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
